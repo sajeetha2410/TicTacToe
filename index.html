@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-decorations">
+    <div class="glow circle-1"></div>
+    <div class="glow circle-2"></div>
+  </div>
+
+  <main class="game-container">
+    <!-- Header -->
+    <header class="game-header">
+      <h1 class="game-title">TIC <span>TAC</span> TOE</h1>
+      
+      <div class="controls-panel">
+        <div class="mode-selector">
+          <button class="mode-btn active" data-mode="pvp" id="modePvp">2 Players</button>
+          <button class="mode-btn" data-mode="ai" id="modeAi">vs Computer</button>
+        </div>
+
+        <div class="difficulty-wrapper hidden" id="difficultyWrapper">
+          <label for="difficultySelect">Level:</label>
+          <select id="difficultySelect">
+            <option value="easy">Casual</option>
+            <option value="hard" selected>Unbeatable</option>
+          </select>
+        </div>
+
+        <button class="icon-btn" id="soundToggle" aria-label="Toggle Sound" title="Sound On/Off">
+          🔊
+        </button>
+      </div>
+    </header>
+
+    <!-- Scoreboard -->
+    <section class="scoreboard">
+      <div class="score-card player-x active-turn" id="scoreCardX">
+        <span class="player-name" id="nameX">Player X</span>
+        <span class="score-value" id="scoreX">0</span>
+      </div>
+      <div class="score-card ties">
+        <span class="player-name">Ties</span>
+        <span class="score-value" id="scoreTies">0</span>
+      </div>
+      <div class="score-card player-o" id="scoreCardO">
+        <span class="player-name" id="nameO">Player O</span>
+        <span class="score-value" id="scoreO">0</span>
+      </div>
+    </section>
+
+    <!-- Turn Banner -->
+    <div class="status-banner" id="statusMessage">
+      <span class="turn-symbol x-color">X</span>'s Turn
+    </div>
+
+    <!-- 3x3 Board -->
+    <div class="board-wrapper">
+      <div class="board" id="board">
+        <button class="cell" data-index="0" aria-label="Cell 1"></button>
+        <button class="cell" data-index="1" aria-label="Cell 2"></button>
+        <button class="cell" data-index="2" aria-label="Cell 3"></button>
+        <button class="cell" data-index="3" aria-label="Cell 4"></button>
+        <button class="cell" data-index="4" aria-label="Cell 5"></button>
+        <button class="cell" data-index="5" aria-label="Cell 6"></button>
+        <button class="cell" data-index="6" aria-label="Cell 7"></button>
+        <button class="cell" data-index="7" aria-label="Cell 8"></button>
+        <button class="cell" data-index="8" aria-label="Cell 9"></button>
+        <div class="strike-line" id="strikeLine"></div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <footer class="game-footer">
+      <button class="action-btn primary" id="restartBtn">Play Again</button>
+      <button class="action-btn secondary" id="resetScoreBtn">Reset Scores</button>
+    </footer>
+  </main>
+
+  <!-- Celebration Confetti -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Link to External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
